@@ -1,0 +1,982 @@
+[
+  {
+    "id": "ALUM-001",
+    "name": "Marcus Vance",
+    "graduation_year": 2018,
+    "degree": "MBA in Strategy & Finance",
+    "current_company": "Apex Strategy Partners",
+    "current_role": "Senior Management Consultant",
+    "industry": "Management Consulting",
+    "function": "Consulting",
+    "skills": [
+      "Case Interviews",
+      "Market Sizing",
+      "Growth Strategy",
+      "Commercial Due Diligence",
+      "Executive Presentation"
+    ],
+    "location": "Chicago, IL",
+    "years_of_experience": 6,
+    "career_summary": "Marcus specializes in corporate growth strategy and commercial due diligence for Fortune 500 clients. Formerly an investment banking analyst before transitioning to management consulting."
+  },
+  {
+    "id": "ALUM-002",
+    "name": "Elena Rostova",
+    "graduation_year": 2019,
+    "degree": "M.S. in Bioengineering",
+    "current_company": "Trinity Advisory Group",
+    "current_role": "Life Sciences & Healthcare Consultant",
+    "industry": "Healthcare & Life Sciences",
+    "function": "Consulting",
+    "skills": [
+      "Pharma Commercial Strategy",
+      "Market Access",
+      "Regulatory Pathways",
+      "Clinical Portfolio Optimization"
+    ],
+    "location": "Boston, MA",
+    "years_of_experience": 5,
+    "career_summary": "Elena bridges clinical bio-sciences with commercial health strategy, advising global pharmaceutical firms on market launch readiness and clinical portfolio investments."
+  },
+  {
+    "id": "ALUM-003",
+    "name": "Tariq Mansour",
+    "graduation_year": 2020,
+    "degree": "B.S. in Systems Engineering",
+    "current_company": "Beacon Digital Consulting",
+    "current_role": "Technology Transformation Consultant",
+    "industry": "Technology Consulting",
+    "function": "Consulting",
+    "skills": [
+      "Cloud Migration Strategy",
+      "Enterprise IT Architecture",
+      "Vendor Assessment",
+      "IT Operating Models"
+    ],
+    "location": "New York, NY",
+    "years_of_experience": 4,
+    "career_summary": "Tariq helps large financial institutions modernize legacy core systems and formulate cloud migration roadmaps with minimal operational disruption."
+  },
+  {
+    "id": "ALUM-004",
+    "name": "Priya Nair",
+    "graduation_year": 2017,
+    "degree": "B.S. in Economics & Mathematics",
+    "current_company": "Cornerstone Forensics",
+    "current_role": "Economic & Litigation Advisory Consultant",
+    "industry": "Legal & Economic Consulting",
+    "function": "Consulting",
+    "skills": [
+      "Econometric Modeling",
+      "Antitrust Analysis",
+      "Damage Quantification",
+      "SAS",
+      "Expert Witness Reports"
+    ],
+    "location": "Washington, DC",
+    "years_of_experience": 7,
+    "career_summary": "Priya conducts high-stakes quantitative and econometric analyses for complex antitrust litigation and regulatory enforcement proceedings."
+  },
+  {
+    "id": "ALUM-005",
+    "name": "Carlos Mendez",
+    "graduation_year": 2021,
+    "degree": "B.A. in Psychology & Organizational Behavior",
+    "current_company": "Meridian People Solutions",
+    "current_role": "Human Capital & Change Consultant",
+    "industry": "Human Capital Advisory",
+    "function": "Consulting",
+    "skills": [
+      "Organizational Design",
+      "Change Management",
+      "Talent Strategy",
+      "Executive Coaching Assessment"
+    ],
+    "location": "Atlanta, GA",
+    "years_of_experience": 3,
+    "career_summary": "Carlos guides multinational companies through M&A workforce integration, leadership development restructuring, and corporate cultural shifts."
+  },
+  {
+    "id": "ALUM-006",
+    "name": "Chloe Dupont",
+    "graduation_year": 2016,
+    "degree": "M.S. in Environmental Policy & Management",
+    "current_company": "TerraPoint Advisors",
+    "current_role": "Sustainability & ESG Senior Consultant",
+    "industry": "Sustainability & Environmental Consulting",
+    "function": "Consulting",
+    "skills": [
+      "Scope 1-3 Emissions Accounting",
+      "TCFD Reporting",
+      "Decarbonization Roadmaps",
+      "Circular Economy Strategy"
+    ],
+    "location": "San Francisco, CA",
+    "years_of_experience": 8,
+    "career_summary": "Chloe partners with enterprise manufacturing and consumer goods executives to construct actionable net-zero transition roadmaps and ESG disclosure frameworks."
+  },
+  {
+    "id": "ALUM-007",
+    "name": "Julian Sterling",
+    "graduation_year": 2021,
+    "degree": "B.S. in Finance",
+    "current_company": "Granite Peak Capital",
+    "current_role": "Investment Banking Associate",
+    "industry": "Investment Banking & Capital Markets",
+    "function": "Finance",
+    "skills": [
+      "LBO Modeling",
+      "DCF Valuation",
+      "M&A Pitchbooks",
+      "Capital Structure Optimization",
+      "Due Diligence"
+    ],
+    "location": "New York, NY",
+    "years_of_experience": 3,
+    "career_summary": "Julian works within Technology, Media & Telecom (TMT) M&A advisory, building complex financial models and managing transaction execution for mid-market software buyouts."
+  },
+  {
+    "id": "ALUM-008",
+    "name": "Sophia Chen",
+    "graduation_year": 2020,
+    "degree": "B.S. in Economics",
+    "current_company": "BlueHaven Partners",
+    "current_role": "Private Equity Senior Analyst",
+    "industry": "Private Equity & Venture Capital",
+    "function": "Finance",
+    "skills": [
+      "Financial Modeling",
+      "Portfolio Company Governance",
+      "Commercial Diligence",
+      "Add-on Acquisitions"
+    ],
+    "location": "Boston, MA",
+    "years_of_experience": 4,
+    "career_summary": "Sophia evaluates direct growth equity investments in healthcare services, conducting deep operational due diligence and supporting portfolio company value creation."
+  },
+  {
+    "id": "ALUM-009",
+    "name": "David O'Connor",
+    "graduation_year": 2017,
+    "degree": "B.B.A. in Accounting & Finance",
+    "current_company": "Zenith Consumer Brands",
+    "current_role": "Corporate FP&A Manager",
+    "industry": "Consumer Packaged Goods (CPG)",
+    "function": "Finance",
+    "skills": [
+      "Annual Operating Plans",
+      "Variance Analysis",
+      "Capital Budgeting",
+      "Executive Dashboards",
+      "Cost Accounting"
+    ],
+    "location": "Minneapolis, MN",
+    "years_of_experience": 7,
+    "career_summary": "David leads corporate financial planning, managing P&L forecasting and multi-million-dollar capital expenditure budgets across North American retail brand portfolios."
+  },
+  {
+    "id": "ALUM-010",
+    "name": "Amara Okafor",
+    "graduation_year": 2018,
+    "degree": "B.S. in Finance",
+    "current_company": "Vanguard Crest Securities",
+    "current_role": "Senior Equity Research Analyst",
+    "industry": "Financial Services & Asset Management",
+    "function": "Finance",
+    "skills": [
+      "Earnings Modeling",
+      "Industry Channel Checks",
+      "Investment Thesis Formulation",
+      "FactSet",
+      "Bloomberg Terminal"
+    ],
+    "location": "New York, NY",
+    "years_of_experience": 6,
+    "career_summary": "Amara covers the global semiconductor and hardware sector, publishing initiation reports and earnings previews for institutional asset managers."
+  },
+  {
+    "id": "ALUM-011",
+    "name": "Ryan Gallagher",
+    "graduation_year": 2015,
+    "degree": "MBA in Real Estate & Finance",
+    "current_company": "Atlas Urban Capital",
+    "current_role": "Commercial Real Estate Finance Director",
+    "industry": "Commercial Real Estate Finance",
+    "function": "Finance",
+    "skills": [
+      "ARGUS Enterprise",
+      "Debt Syndication",
+      "Mezzanine Financing",
+      "Underwriting Mixed-Use Assets"
+    ],
+    "location": "Dallas, TX",
+    "years_of_experience": 9,
+    "career_summary": "Ryan structures debt and equity capital stacks for multi-family and industrial logistics real estate acquisitions across Sunbelt metropolitan areas."
+  },
+  {
+    "id": "ALUM-012",
+    "name": "Meera Joshi",
+    "graduation_year": 2022,
+    "degree": "B.S. in Mathematics & Statistics",
+    "current_company": "Pulse Capital Labs",
+    "current_role": "FinTech Quantitative Risk Analyst",
+    "industry": "Financial Technology (FinTech)",
+    "function": "Finance",
+    "skills": [
+      "Credit Risk Modeling",
+      "Monte Carlo Simulations",
+      "Python",
+      "SQL",
+      "Regulatory Stress Testing"
+    ],
+    "location": "Chicago, IL",
+    "years_of_experience": 2,
+    "career_summary": "Meera develops quantitative underwriting models and automated fraud-loss mitigation algorithms for a consumer neobanking platform."
+  },
+  {
+    "id": "ALUM-013",
+    "name": "Samantha Reed",
+    "graduation_year": 2016,
+    "degree": "B.A. in Communications & Media",
+    "current_company": "Orbit App Studio",
+    "current_role": "Growth Marketing Director",
+    "industry": "Mobile Applications & Software",
+    "function": "Marketing",
+    "skills": [
+      "User Acquisition (CAC/LTV)",
+      "Paid Search & Social",
+      "A/B Testing",
+      "Mixpanel",
+      "Attribution Modeling"
+    ],
+    "location": "Los Angeles, CA",
+    "years_of_experience": 8,
+    "career_summary": "Samantha oversees eight-figure performance marketing budgets for mobile apps, focusing on customer acquisition optimization and viral conversion funnels."
+  },
+  {
+    "id": "ALUM-014",
+    "name": "Kevin Zhao",
+    "graduation_year": 2019,
+    "degree": "B.S. in Marketing",
+    "current_company": "Lumina Brands",
+    "current_role": "Brand Strategy Lead",
+    "industry": "Consumer Retail & Apparel",
+    "function": "Marketing",
+    "skills": [
+      "Brand Positioning",
+      "Consumer Persona Research",
+      "Creative Briefs",
+      "Integrated Campaign Planning"
+    ],
+    "location": "New York, NY",
+    "years_of_experience": 5,
+    "career_summary": "Kevin architects brand narratives and experiential campaign activations for sustainable direct-to-consumer apparel and lifestyle product lines."
+  },
+  {
+    "id": "ALUM-015",
+    "name": "Fatima Al-Sayed",
+    "graduation_year": 2018,
+    "degree": "B.A. in English & Computer Science",
+    "current_company": "CloudScale Software",
+    "current_role": "Senior Product Marketing Manager (PMM)",
+    "industry": "Enterprise B2B SaaS",
+    "function": "Marketing",
+    "skills": [
+      "Go-To-Market (GTM) Strategy",
+      "Competitive Battlecards",
+      "Sales Enablement",
+      "Product Messaging Frameworks"
+    ],
+    "location": "San Francisco, CA",
+    "years_of_experience": 6,
+    "career_summary": "Fatima defines product messaging, competitive positioning, and launch strategy for enterprise developer tooling and cloud observability software."
+  },
+  {
+    "id": "ALUM-016",
+    "name": "Lucas Rossi",
+    "graduation_year": 2021,
+    "degree": "B.B.A. in Marketing",
+    "current_company": "Bloom E-Commerce",
+    "current_role": "Lifecycle & Retention Marketing Specialist",
+    "industry": "E-Commerce & Direct-to-Consumer",
+    "function": "Marketing",
+    "skills": [
+      "Klaviyo",
+      "Customer Segmentation",
+      "Churn Prevention",
+      "Email Marketing Automation",
+      "SMS Strategy"
+    ],
+    "location": "Austin, TX",
+    "years_of_experience": 3,
+    "career_summary": "Lucas designs personalized onboarding and retention email/SMS drip flows that have decreased customer churn by 22% across multi-channel retail."
+  },
+  {
+    "id": "ALUM-017",
+    "name": "Aaliyah Brooks",
+    "graduation_year": 2020,
+    "degree": "B.A. in Journalism & Mass Communication",
+    "current_company": "Waveform Media",
+    "current_role": "Social Media & Content Marketing Manager",
+    "industry": "Digital Media & Entertainment",
+    "function": "Marketing",
+    "skills": [
+      "Short-Form Video (TikTok/Reels)",
+      "Influencer Partnerships",
+      "Community Management",
+      "Content Calendars"
+    ],
+    "location": "Miami, FL",
+    "years_of_experience": 4,
+    "career_summary": "Aaliyah directs viral social video strategy and manages creator collaborations for emerging consumer electronics and audio brands."
+  },
+  {
+    "id": "ALUM-018",
+    "name": "Daniel Kim",
+    "graduation_year": 2022,
+    "degree": "B.S. in Information Systems",
+    "current_company": "Hyperion Digital",
+    "current_role": "Digital Advertising & SEO Strategist",
+    "industry": "Digital Marketing & Advertising",
+    "function": "Marketing",
+    "skills": [
+      "Google Ads",
+      "Technical SEO",
+      "Google Analytics 4",
+      "Keyword Clustering",
+      "Landing Page CRO"
+    ],
+    "location": "Seattle, WA",
+    "years_of_experience": 2,
+    "career_summary": "Daniel runs paid search campaigns and technical search engine optimization for mid-sized high-growth B2B fintech companies."
+  },
+  {
+    "id": "ALUM-019",
+    "name": "Rachel Adams",
+    "graduation_year": 2017,
+    "degree": "B.A. in Sociology",
+    "current_company": "Synthetix AI",
+    "current_role": "Senior Technical Recruiter",
+    "industry": "Artificial Intelligence & Technology",
+    "function": "Human Resources",
+    "skills": [
+      "Full-Cycle Tech Recruiting",
+      "Talent Sourcing",
+      "Salary Negotiations",
+      "Candidate Experience",
+      "Greenhouse"
+    ],
+    "location": "Seattle, WA",
+    "years_of_experience": 7,
+    "career_summary": "Rachel leads hiring for machine learning engineering and distributed systems teams, scaling early-stage startup engineering headcount from 20 to 120."
+  },
+  {
+    "id": "ALUM-020",
+    "name": "Jamal Washington",
+    "graduation_year": 2016,
+    "degree": "B.S. in Human Resources Management",
+    "current_company": "Kinetix Logistics",
+    "current_role": "People Operations & HRBP Lead",
+    "industry": "Logistics & Supply Chain",
+    "function": "Human Resources",
+    "skills": [
+      "HR Business Partnering",
+      "Employee Relations",
+      "Performance Review Design",
+      "Workday",
+      "Manager Coaching"
+    ],
+    "location": "Atlanta, GA",
+    "years_of_experience": 8,
+    "career_summary": "Jamal serves as strategic HR business partner for regional operations leaders, overseeing talent retention, succession planning, and dispute resolution."
+  },
+  {
+    "id": "ALUM-021",
+    "name": "Hannah Lindqvist",
+    "graduation_year": 2019,
+    "degree": "M.Ed. in Instructional Design & Adult Learning",
+    "current_company": "GlobalCore Enterprise",
+    "current_role": "Learning & Development (L&D) Specialist",
+    "industry": "Enterprise Technology",
+    "function": "Human Resources",
+    "skills": [
+      "Curriculum Development",
+      "E-Learning Authoring (Articulate 360)",
+      "Leadership Academies",
+      "Training Needs Analysis"
+    ],
+    "location": "Denver, CO",
+    "years_of_experience": 5,
+    "career_summary": "Hannah builds global leadership onboarding and continuous technical upskilling curricula for over 4,000 corporate employees."
+  },
+  {
+    "id": "ALUM-022",
+    "name": "Vikram Patel",
+    "graduation_year": 2021,
+    "degree": "B.S. in Economics & Actuarial Science",
+    "current_company": "Horizon Health Group",
+    "current_role": "Total Rewards & Compensation Analyst",
+    "industry": "Hospital & Healthcare Services",
+    "function": "Human Resources",
+    "skills": [
+      "Salary Benchmarking",
+      "Equity Comp Modeling",
+      "Radford Surveys",
+      "Health Benefit Analysis",
+      "FLSA Compliance"
+    ],
+    "location": "Philadelphia, PA",
+    "years_of_experience": 3,
+    "career_summary": "Vikram models market-competitive salary bands, annual bonus plans, and executive equity distribution for a large regional healthcare provider."
+  },
+  {
+    "id": "ALUM-023",
+    "name": "Zoe Tremblay",
+    "graduation_year": 2018,
+    "degree": "B.A. in Political Science & Public Policy",
+    "current_company": "Catalyst Media",
+    "current_role": "Diversity, Equity & Inclusion (DEI) Program Manager",
+    "industry": "Media & Entertainment",
+    "function": "Human Resources",
+    "skills": [
+      "Employee Resource Groups (ERGs)",
+      "Inclusive Hiring Audits",
+      "DEI Metrics & Reporting",
+      "Unconscious Bias Training"
+    ],
+    "location": "New York, NY",
+    "years_of_experience": 6,
+    "career_summary": "Zoe structures corporate inclusion initiatives, manages employee resource groups, and partners with university recruitment teams to expand diverse talent pipelines."
+  },
+  {
+    "id": "ALUM-024",
+    "name": "Derek Morales",
+    "graduation_year": 2014,
+    "degree": "B.S. in Industrial & Systems Engineering",
+    "current_company": "Portside Cargo Solutions",
+    "current_role": "Global Supply Chain & Logistics Director",
+    "industry": "Maritime Shipping & Logistics",
+    "function": "Operations",
+    "skills": [
+      "End-to-End Supply Chain",
+      "Freight Forwarding",
+      "Inventory Optimization",
+      "Customs Compliance",
+      "ERP (SAP)"
+    ],
+    "location": "Houston, TX",
+    "years_of_experience": 10,
+    "career_summary": "Derek orchestrates trans-Pacific container shipping, customs clearance, and multi-hub distribution strategies to minimize lead times and transit tariff exposures."
+  },
+  {
+    "id": "ALUM-025",
+    "name": "Ananya Sen",
+    "graduation_year": 2018,
+    "degree": "B.S. in Mechanical Engineering",
+    "current_company": "Stellar Precision Manufacturing",
+    "current_role": "Operational Excellence & Lean Leader",
+    "industry": "Aerospace & Industrial Manufacturing",
+    "function": "Operations",
+    "skills": [
+      "Lean Six Sigma Black Belt",
+      "Kaizen Facilitation",
+      "Value Stream Mapping",
+      "Root Cause Analysis (5 Whys)",
+      "OEE Tracking"
+    ],
+    "location": "Detroit, MI",
+    "years_of_experience": 6,
+    "career_summary": "Ananya deploys Lean manufacturing frameworks across high-precision CNC aerospace assembly plants, reducing production line scrap rates by 35%."
+  },
+  {
+    "id": "ALUM-026",
+    "name": "Patrick O'Shea",
+    "graduation_year": 2020,
+    "degree": "B.A. in Supply Chain Management",
+    "current_company": "SwiftBox Delivery",
+    "current_role": "Fulfillment & Warehouse Operations Manager",
+    "industry": "Logistics & Warehousing",
+    "function": "Operations",
+    "skills": [
+      "Warehouse Management Systems (WMS)",
+      "Last-Mile Delivery",
+      "Shift Scheduling",
+      "Safety Compliance (OSHA)"
+    ],
+    "location": "Phoenix, AZ",
+    "years_of_experience": 4,
+    "career_summary": "Patrick manages daily order pick-and-pack workflow, automated sortation robotics, and supervisory personnel for an 800,000 sq. ft. regional e-commerce fulfillment hub."
+  },
+  {
+    "id": "ALUM-027",
+    "name": "Mei-Ling Thorne",
+    "graduation_year": 2019,
+    "degree": "B.B.A. in Information Systems & Operations",
+    "current_company": "SaaSRocket",
+    "current_role": "Revenue Operations (RevOps) Manager",
+    "industry": "Cloud & B2B Software",
+    "function": "Operations",
+    "skills": [
+      "Salesforce Administration",
+      "Deal Desk",
+      "Sales Commission Modeling",
+      "HubSpot CRM",
+      "Pipeline Forecasting"
+    ],
+    "location": "San Diego, CA",
+    "years_of_experience": 5,
+    "career_summary": "Mei-Ling optimizes sales tech stacks, quote-to-cash workflows, and data hygiene between marketing and sales departments for a series-C software company."
+  },
+  {
+    "id": "ALUM-028",
+    "name": "Nathaniel Drake",
+    "graduation_year": 2021,
+    "degree": "B.S. in Business Administration",
+    "current_company": "Veridian BioTech",
+    "current_role": "Strategic Sourcing & Procurement Specialist",
+    "industry": "Biotechnology & Pharmaceuticals",
+    "function": "Operations",
+    "skills": [
+      "RFP / RFQ Management",
+      "Supplier Contract Negotiations",
+      "Direct Material Sourcing",
+      "Spend Analytics"
+    ],
+    "location": "Raleigh, NC",
+    "years_of_experience": 3,
+    "career_summary": "Nathaniel negotiates multi-year master supply agreements for clinical reagents and specialized lab equipment with domestic and international vendors."
+  },
+  {
+    "id": "ALUM-029",
+    "name": "Aaron Patel",
+    "graduation_year": 2015,
+    "degree": "B.S. in Computer Science",
+    "current_company": "Nova Fintech",
+    "current_role": "Principal Product Manager",
+    "industry": "Financial Technology (FinTech)",
+    "function": "Product Management",
+    "skills": [
+      "Product Strategy",
+      "Consumer Mobile Experience",
+      "Scrum / Agile",
+      "PRD Authoring",
+      "API Integration"
+    ],
+    "location": "San Francisco, CA",
+    "years_of_experience": 9,
+    "career_summary": "Aaron leads core banking and peer-to-peer transfer product squads, steering multi-year roadmaps from concept to millions of active mobile banking users."
+  },
+  {
+    "id": "ALUM-030",
+    "name": "Stephanie Wu",
+    "graduation_year": 2017,
+    "degree": "B.S. in Electrical & Computer Engineering",
+    "current_company": "ScaleGrid Infrastructure",
+    "current_role": "Technical Product Manager (Cloud Platform)",
+    "industry": "Cloud Infrastructure & Platforms",
+    "function": "Product Management",
+    "skills": [
+      "Kubernetes & Containers",
+      "Developer Experience (DX)",
+      "Microservices Architecture",
+      "API Design",
+      "Jira"
+    ],
+    "location": "Seattle, WA",
+    "years_of_experience": 7,
+    "career_summary": "Stephanie defines specifications for internal developer platforms and container orchestration solutions that empower 1,500+ backend software engineers."
+  },
+  {
+    "id": "ALUM-031",
+    "name": "Liam Gallagher",
+    "graduation_year": 2019,
+    "degree": "B.S. in Cognitive Science & Human-Computer Interaction",
+    "current_company": "StreamPulse Media",
+    "current_role": "Growth Product Manager",
+    "industry": "Digital Streaming & Media",
+    "function": "Product Management",
+    "skills": [
+      "Experimentation Frameworks",
+      "Onboarding Funnels",
+      "Cohort Retention",
+      "A/B Testing",
+      "Amplitude"
+    ],
+    "location": "Los Angeles, CA",
+    "years_of_experience": 5,
+    "career_summary": "Liam runs cross-functional growth pods focused on subscriber sign-up friction reduction, viral referral hooks, and free-to-paid conversion optimization."
+  },
+  {
+    "id": "ALUM-032",
+    "name": "Diana Prince-Kovacs",
+    "graduation_year": 2016,
+    "degree": "MBA in Economics & Management",
+    "current_company": "WorkMatrix CRM",
+    "current_role": "B2B Enterprise SaaS Product Manager",
+    "industry": "Enterprise Software (CRM)",
+    "function": "Product Management",
+    "skills": [
+      "Customer Discovery Interviews",
+      "Enterprise Roadmapping",
+      "Stakeholder Alignment",
+      "Feature Prioritization (RICE)"
+    ],
+    "location": "New York, NY",
+    "years_of_experience": 8,
+    "career_summary": "Diana owns the analytics reporting module of an enterprise sales automation platform, collaborating directly with Global 2000 client advisory boards."
+  },
+  {
+    "id": "ALUM-033",
+    "name": "Jordan Becker",
+    "graduation_year": 2022,
+    "degree": "B.A. in Economics & Computer Science",
+    "current_company": "CartFlow",
+    "current_role": "Associate Product Manager (APM)",
+    "industry": "E-Commerce Technology",
+    "function": "Product Management",
+    "skills": [
+      "User Story Mapping",
+      "Sprint Backlog Grooming",
+      "Wireframing (Figma)",
+      "Customer Feedback Synthesis"
+    ],
+    "location": "Chicago, IL",
+    "years_of_experience": 2,
+    "career_summary": "Jordan coordinates sprint backlogs, conducts weekly user testing sessions, and scopes frictionless 1-click checkout features as part of an APM rotational program."
+  },
+  {
+    "id": "ALUM-034",
+    "name": "Fatima Zahra",
+    "graduation_year": 2018,
+    "degree": "M.S. in Data Science",
+    "current_company": "DeepMindset Labs",
+    "current_role": "AI Product Manager",
+    "industry": "Artificial Intelligence & Machine Learning",
+    "function": "Product Management",
+    "skills": [
+      "LLM Evaluation",
+      "Prompt Engineering Workflows",
+      "AI Ethics & Safety",
+      "Model Latency Benchmarking"
+    ],
+    "location": "San Jose, CA",
+    "years_of_experience": 6,
+    "career_summary": "Fatima bridges foundational generative AI research with commercial enterprise assistant applications, governing model evaluation pipelines and latency benchmarks."
+  },
+  {
+    "id": "ALUM-035",
+    "name": "Trevor Vance",
+    "graduation_year": 2018,
+    "degree": "B.S. in Statistics",
+    "current_company": "OmniRetail Inc.",
+    "current_role": "Senior Business Intelligence Analyst",
+    "industry": "Omnichannel Retail",
+    "function": "Business Analytics",
+    "skills": [
+      "Advanced SQL",
+      "Tableau Dashboard Design",
+      "Data Warehousing (Snowflake)",
+      "dbt",
+      "Executive KPI Reporting"
+    ],
+    "location": "Minneapolis, MN",
+    "years_of_experience": 6,
+    "career_summary": "Trevor builds enterprise semantic data layers in Snowflake and designs executive-level sales performance dashboards consumed by C-suite retail leaders."
+  },
+  {
+    "id": "ALUM-036",
+    "name": "Maya Lin",
+    "graduation_year": 2019,
+    "degree": "B.S. in Applied Mathematics",
+    "current_company": "Wanderlust Travel Group",
+    "current_role": "Customer Insights & Analytics Lead",
+    "industry": "Travel & Hospitality Technology",
+    "function": "Business Analytics",
+    "skills": [
+      "Customer Lifetime Value (LTV)",
+      "Python (Pandas/Scikit-Learn)",
+      "K-Means Clustering",
+      "Survey Analysis"
+    ],
+    "location": "Miami, FL",
+    "years_of_experience": 5,
+    "career_summary": "Maya analyzes booking patterns, behavioral loyalty segmentation, and promotional sensitivity across 15 million active global travel members."
+  },
+  {
+    "id": "ALUM-037",
+    "name": "Brian K. Murphy",
+    "graduation_year": 2020,
+    "degree": "B.S. in Economics & Financial Analytics",
+    "current_company": "Keystone Financial Group",
+    "current_role": "Risk & Financial Analytics Specialist",
+    "industry": "Banking & Financial Services",
+    "function": "Business Analytics",
+    "skills": [
+      "Credit Scoring Models",
+      "Power BI",
+      "SQL Window Functions",
+      "Loss Forecasting",
+      "SAS"
+    ],
+    "location": "Charlotte, NC",
+    "years_of_experience": 4,
+    "career_summary": "Brian models default probabilities and portfolio stress thresholds for prime auto and personal loan underwriting lines."
+  },
+  {
+    "id": "ALUM-038",
+    "name": "Aisha Diallo",
+    "graduation_year": 2021,
+    "degree": "B.S. in Business Analytics",
+    "current_company": "PlayForge Games",
+    "current_role": "Product Analytics Specialist",
+    "industry": "Interactive Gaming & Entertainment",
+    "function": "Business Analytics",
+    "skills": [
+      "In-Game Economy Tuning",
+      "Funnel Drop-Off Analysis",
+      "Looker",
+      "A/B Test Statistical Significance",
+      "BigQuery"
+    ],
+    "location": "Austin, TX",
+    "years_of_experience": 3,
+    "career_summary": "Aisha conducts player retention deep-dives and telemetry event tracking for live-service mobile and PC gaming titles."
+  },
+  {
+    "id": "ALUM-039",
+    "name": "Gabriel Santos",
+    "graduation_year": 2017,
+    "degree": "M.S. in Health Informatics",
+    "current_company": "CareMetric Health",
+    "current_role": "Healthcare Analytics Consultant",
+    "industry": "Healthcare Analytics & HealthTech",
+    "function": "Business Analytics",
+    "skills": [
+      "EHR Data (Epic/Cerner)",
+      "Readmission Prediction",
+      "HIPAA Compliance",
+      "R / RStudio",
+      "Claims Analysis"
+    ],
+    "location": "Philadelphia, PA",
+    "years_of_experience": 7,
+    "career_summary": "Gabriel leverages claims data and electronic health record telemetry to optimize hospital resource utilization and patient readmission risk factors."
+  },
+  {
+    "id": "ALUM-040",
+    "name": "Rebecca Klein",
+    "graduation_year": 2019,
+    "degree": "B.S. in Marketing & Data Analytics",
+    "current_company": "AdVeritas Media",
+    "current_role": "Marketing Analytics Manager",
+    "industry": "Advertising Technology (AdTech)",
+    "function": "Business Analytics",
+    "skills": [
+      "Marketing Mix Modeling (MMM)",
+      "Multi-Touch Attribution",
+      "Python",
+      "Tableau",
+      "Omnichannel Media Spend"
+    ],
+    "location": "New York, NY",
+    "years_of_experience": 5,
+    "career_summary": "Rebecca formulates marketing mix econometric models to advise consumer packaged goods clients on annual advertising budget allocations across channels."
+  },
+  {
+    "id": "ALUM-041",
+    "name": "Jason Reynolds",
+    "graduation_year": 2016,
+    "degree": "B.S. in Computer Engineering",
+    "current_company": "CloudHaven Systems",
+    "current_role": "Cloud Infrastructure & DevOps Architect",
+    "industry": "Cloud Computing & DevOps",
+    "function": "IT",
+    "skills": [
+      "AWS / Azure Architecture",
+      "Terraform (IaC)",
+      "CI/CD (GitHub Actions)",
+      "Docker & Kubernetes",
+      "Linux Administration"
+    ],
+    "location": "Seattle, WA",
+    "years_of_experience": 8,
+    "career_summary": "Jason designs resilient multi-region cloud infrastructure and automated infrastructure-as-code deployment pipelines for high-traffic web applications."
+  },
+  {
+    "id": "ALUM-042",
+    "name": "Nina Morozov",
+    "graduation_year": 2020,
+    "degree": "B.S. in Cybersecurity",
+    "current_company": "IronShield Defense",
+    "current_role": "Cyber Security Operations Engineer",
+    "industry": "Cybersecurity & Defense Tech",
+    "function": "IT",
+    "skills": [
+      "SIEM (Splunk)",
+      "Incident Response",
+      "Vulnerability Scanning (Nessus)",
+      "Zero Trust Architecture",
+      "SOC Analysis"
+    ],
+    "location": "Washington, DC",
+    "years_of_experience": 4,
+    "career_summary": "Nina investigates security alerts, coordinates active incident response protocols, and strengthens Zero Trust perimeter defenses against cyber threats."
+  },
+  {
+    "id": "ALUM-043",
+    "name": "Ethan Cole",
+    "graduation_year": 2018,
+    "degree": "B.S. in Information Technology",
+    "current_company": "Nexus Enterprise Solutions",
+    "current_role": "Enterprise IT Systems Administrator",
+    "industry": "Enterprise IT Services",
+    "function": "IT",
+    "skills": [
+      "Active Directory / Okta SSO",
+      "Intune / Jamf MDM",
+      "PowerShell Scripting",
+      "Disaster Recovery",
+      "SLA Management"
+    ],
+    "location": "Columbus, OH",
+    "years_of_experience": 6,
+    "career_summary": "Ethan oversees identity management, MDM workstation deployments, and corporate patch management frameworks for 3,500 enterprise seats."
+  },
+  {
+    "id": "ALUM-044",
+    "name": "Sunita Rao",
+    "graduation_year": 2015,
+    "degree": "M.S. in Information Systems Management",
+    "current_company": "Global Telecom Networks",
+    "current_role": "Senior IT Project Manager (PMP)",
+    "industry": "Telecommunications",
+    "function": "IT",
+    "skills": [
+      "PMP Certified",
+      "ITIL Framework",
+      "Agile & Waterfall Delivery",
+      "Budget & Resource Planning",
+      "Vendor SLAs"
+    ],
+    "location": "Dallas, TX",
+    "years_of_experience": 9,
+    "career_summary": "Sunita steers enterprise-wide software migrations, telecom infrastructure rollouts, and disaster recovery audits from conception to operational handoff."
+  },
+  {
+    "id": "ALUM-045",
+    "name": "Malik Washington",
+    "graduation_year": 2021,
+    "degree": "B.S. in Computer Science & Networking",
+    "current_company": "EdgePoint Networks",
+    "current_role": "Network & Systems Infrastructure Engineer",
+    "industry": "Networking & Distributed Systems",
+    "function": "IT",
+    "skills": [
+      "Cisco CCNA",
+      "BGP / OSPF Routing",
+      "Firewall Configuration (Palo Alto)",
+      "Wireshark",
+      "SD-WAN"
+    ],
+    "location": "Atlanta, GA",
+    "years_of_experience": 3,
+    "career_summary": "Malik troubleshoots wide-area network latency bottlenecks, provisions SD-WAN branch hardware, and maintains high-availability core routing fabrics."
+  },
+  {
+    "id": "ALUM-046",
+    "name": "Christopher Hayes",
+    "graduation_year": 2017,
+    "degree": "B.B.A. in Marketing & Professional Sales",
+    "current_company": "CloudSphere Systems",
+    "current_role": "Enterprise Account Executive",
+    "industry": "Enterprise Cloud Software",
+    "function": "Sales",
+    "skills": [
+      "MEDDPICC Framework",
+      "C-Suite Consultative Selling",
+      "Complex Deal Negotiations",
+      "Pipeline Forecasting"
+    ],
+    "location": "New York, NY",
+    "years_of_experience": 7,
+    "career_summary": "Christopher closes multi-year six- and seven-figure cloud infrastructure software agreements with Fortune 100 procurement and CIO offices."
+  },
+  {
+    "id": "ALUM-047",
+    "name": "Valeria Morales",
+    "graduation_year": 2022,
+    "degree": "B.A. in Communications",
+    "current_company": "PipelineIQ",
+    "current_role": "Sales Development Representative (SDR) Team Lead",
+    "industry": "Sales Technology & B2B SaaS",
+    "function": "Sales",
+    "skills": [
+      "Outbound Prospecting",
+      "Salesloft / Outreach",
+      "Cold Calling & Email Cadences",
+      "Objection Handling",
+      "Coaching"
+    ],
+    "location": "Austin, TX",
+    "years_of_experience": 2,
+    "career_summary": "Valeria leads an inbound/outbound SDR cohort generating $3M+ in quarterly qualified sales pipeline for a B2B intelligence SaaS platform."
+  },
+  {
+    "id": "ALUM-048",
+    "name": "Austin Bennett",
+    "graduation_year": 2018,
+    "degree": "B.S. in Computer Science",
+    "current_company": "DataCore Analytics",
+    "current_role": "Senior Solutions Consultant (Pre-Sales Engineer)",
+    "industry": "Data Analytics & Business Intelligence",
+    "function": "Sales",
+    "skills": [
+      "Technical Discovery",
+      "Proof of Concept (PoC) Builds",
+      "Technical Demo Delivery",
+      "RFP Responses",
+      "Solution Architecture"
+    ],
+    "location": "Boston, MA",
+    "years_of_experience": 6,
+    "career_summary": "Austin partners with enterprise account executives to architect tailored proof-of-concept data architectures and demonstrate technical ROI during prospect pitches."
+  },
+  {
+    "id": "ALUM-049",
+    "name": "Tiffany Nguyen",
+    "graduation_year": 2016,
+    "degree": "B.S. in Finance",
+    "current_company": "PayLink Global",
+    "current_role": "Strategic Partnerships & Business Development Manager",
+    "industry": "Payments & Financial Technology",
+    "function": "Sales",
+    "skills": [
+      "Channel Partnerships",
+      "Revenue-Share Negotiations",
+      "Contract Structuring",
+      "Ecosystem Strategy"
+    ],
+    "location": "San Francisco, CA",
+    "years_of_experience": 8,
+    "career_summary": "Tiffany sources, structures, and executes co-marketing and payment gateway channel distribution agreements with major e-commerce platforms."
+  },
+  {
+    "id": "ALUM-050",
+    "name": "Omar Farooq",
+    "graduation_year": 2019,
+    "degree": "B.S. in Biology",
+    "current_company": "MedEquip Global",
+    "current_role": "Medical Device Territory Account Specialist",
+    "industry": "Medical Devices & Healthcare Equipment",
+    "function": "Sales",
+    "skills": [
+      "Clinical In-Servicing",
+      "Hospital Purchasing Committees",
+      "Operating Room Demonstrations",
+      "Territory Quota Attainment"
+    ],
+    "location": "Denver, CO",
+    "years_of_experience": 5,
+    "career_summary": "Omar sells robotic surgical instrumentation to regional hospital networks and provides in-room clinical technical guidance during trial procedures."
+  }
+]
