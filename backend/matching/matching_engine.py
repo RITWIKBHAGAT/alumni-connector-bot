@@ -11,6 +11,11 @@ import re
 from dataclasses import asdict, dataclass, field
 from typing import Any, Dict, List, Optional, Set, Tuple, Union
 
+try:
+    from goal_analyzer import CareerGoalAnalyzer, ParsedCareerGoal
+except ImportError:
+    from .goal_analyzer import CareerGoalAnalyzer, ParsedCareerGoal
+
 
 # Keyword dictionaries mapped to functional domains
 FUNCTION_LEXICON: Dict[str, Set[str]] = {
@@ -181,6 +186,7 @@ class AlumniMatchingEngine:
 
         self.data_path = data_path
         self.alumni_profiles = self._load_data(data_path)
+        self.analyzer = CareerGoalAnalyzer()
 
     def _load_data(self, path: str) -> List[Dict[str, Any]]:
         """Loads and parses the alumni dataset from JSON."""
@@ -456,12 +462,40 @@ class AlumniMatchingEngine:
 
         return total_score, reasons, True
 
+    def analyze_goal(self, career_goal: str) -> ParsedCareerGoal:
+        """Convenience method to parse a natural-language goal into a structured ParsedCareerGoal."""
+        return self.analyzer.analyze(career_goal)
+
+    def match_structured(
+        self,
+        parsed_goal: ParsedCareerGoal,
+        selected_field: Optional[Union[str, int]] = None,
+        top_k: int = 5,
+        strict_filter: bool = False
+    ) -> List[MatchResult]:
+        """
+        Matches a structured ParsedCareerGoal against all alumni profiles.
+        If no selected_field is specified, it uses parsed_goal.primary_function if available.
+        """
+        effective_field = selected_field
+        if (effective_field is None or effective_field == "") and parsed_goal.primary_function:
+            effective_field = parsed_goal.primary_function
+
+        return self.match(
+            career_goal=parsed_goal.raw_goal,
+            selected_field=effective_field,
+            top_k=top_k,
+            strict_filter=strict_filter,
+            parsed_goal=parsed_goal
+        )
+
     def match(
         self,
         career_goal: str = "",
         selected_field: Optional[Union[str, int]] = None,
         top_k: int = 5,
-        strict_filter: bool = False
+        strict_filter: bool = False,
+        parsed_goal: Optional[ParsedCareerGoal] = None
     ) -> List[MatchResult]:
         """
         Matches a student's career goal and optional selected field against all alumni profiles
@@ -474,6 +508,9 @@ class AlumniMatchingEngine:
         if isinstance(selected_field, int):
             top_k = selected_field
             selected_field = None
+
+        if not career_goal and parsed_goal:
+            career_goal = parsed_goal.raw_goal
 
         goal_clean = career_goal.strip() if career_goal else ""
         field_clean = selected_field.strip() if (isinstance(selected_field, str) and selected_field) else ""

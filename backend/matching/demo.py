@@ -9,11 +9,20 @@ from matching_engine import AlumniMatchingEngine
 
 def print_results(goal: str, selected_field: str = "", top_k: int = 5):
     engine = AlumniMatchingEngine()
+    parsed = engine.analyze_goal(goal) if goal else None
     results = engine.match(career_goal=goal, selected_field=selected_field, top_k=top_k)
 
     field_label = f" | FIELD: \"{selected_field}\"" if selected_field else ""
     print("=" * 80)
     print(f"STUDENT CAREER GOAL: \"{goal}\"{field_label}")
+    if parsed and parsed.raw_goal:
+        print("PARSED STRUCTURED GOAL:")
+        print(f"  • Primary Function: {parsed.primary_function or 'None'}")
+        print(f"  • Target Roles:     {', '.join(parsed.target_roles) or 'None'}")
+        print(f"  • Target Skills:    {', '.join(parsed.target_skills) or 'None'}")
+        print(f"  • Target Companies: {', '.join(parsed.target_companies) or 'None'}")
+        print(f"  • Career Stage:     {parsed.career_stage or 'None'}")
+        print(f"  • Confidence Score: {parsed.confidence_score:.2f}")
     print("=" * 80)
     print(f"Top {len(results)} Alumnus Recommendations:\n")
 
