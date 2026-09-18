@@ -153,9 +153,82 @@ class TestAlumniMatchingEngine(unittest.TestCase):
             self.assertGreaterEqual(scores[i], scores[i + 1])
 
     def test_empty_goal_handling(self):
-        """Verifies graceful handling of empty or blank string goals."""
+        """Verifies graceful handling of empty or blank string goals when no field is selected."""
         self.assertEqual(self.engine.match(""), [])
         self.assertEqual(self.engine.match("   "), [])
+        self.assertEqual(self.engine.match("", selected_field="All Fields"), [])
+
+    def test_selected_field_without_goal(self):
+        """Verifies that selecting a field without typing a goal returns relevant alumni in that discipline."""
+        results = self.engine.match("", selected_field="Finance", top_k=5)
+        self.assertEqual(len(results), 5)
+        for r in results:
+            self.assertEqual(r.function, "Finance")
+            self.assertGreater(r.match_percentage, 50)
+            self.assertTrue(any("selected field" in reason.lower() for reason in r.reasons))
+
+    def test_selected_field_boosting(self):
+        """Verifies that selected_field provides a score boost to alumni in that domain."""
+        goal = "I want to work on digital transformation and strategic roadmap advisory."
+        # Without selected field
+        results_no_field = self.engine.match(goal, top_k=5)
+        # With Consulting field
+        results_with_field = self.engine.match(goal, selected_field="Consulting", top_k=5)
+
+        self.assertEqual(len(results_with_field), 5)
+        top_match = results_with_field[0]
+        self.assertEqual(top_match.function, "Consulting")
+        # Ensure field boost reason is present
+        self.assertTrue(any("selected field" in reason.lower() for reason in top_match.reasons))
+
+    def test_strict_filter(self):
+        """Verifies that strict_filter=True restricts results strictly to matching domains."""
+        goal = "operations and supply chain strategy"
+        results = self.engine.match(goal, selected_field="Human Resources", top_k=5, strict_filter=True)
+        for r in results:
+            self.assertEqual(r.function, "Human Resources")
+
+    def test_match_percentage_and_profile_fields(self):
+        """Verifies all detailed profile attributes and 0-100 match percentage are populated."""
+        goal = "Lead enterprise cloud infrastructure and cybersecurity architectures."
+        results = self.engine.match(goal, top_k=3)
+
+        self.assertEqual(len(results), 3)
+        for r in results:
+            # Match percentage assertions
+            self.assertIsInstance(r.match_percentage, int)
+            self.assertGreaterEqual(r.match_percentage, 0)
+            self.assertLessEqual(r.match_percentage, 100)
+            self.assertEqual(r.match_percentage, int(round(r.match_score * 100)))
+
+            # Extended profile field assertions
+            self.assertTrue(r.alumnus_id.startswith("ALUM-"))
+            self.assertGreater(r.graduation_year, 2010)
+            self.assertTrue(len(r.degree) > 0)
+            self.assertTrue(len(r.industry) > 0)
+            self.assertTrue(len(r.function) > 0)
+            self.assertTrue(len(r.location) > 0)
+            self.assertIsInstance(r.skills, list)
+            self.assertGreater(len(r.skills), 0)
+            self.assertGreater(r.years_of_experience, 0)
+            self.assertTrue(len(r.career_summary) > 0)
+
+            # Dictionary aliases assertion
+            d = r.to_dict()
+            self.assertEqual(d["matchPercentage"], r.match_percentage)
+            self.assertEqual(d["id"], r.alumnus_id)
+            self.assertEqual(d["name"], r.alumnus_name)
+            self.assertEqual(d["current_company"], r.company)
+            self.assertEqual(d["current_role"], r.role)
+            self.assertEqual(d["graduationYear"], r.graduation_year)
+            self.assertEqual(d["yearsOfExperience"], r.years_of_experience)
+            self.assertEqual(d["careerSummary"], r.career_summary)
+
+    def test_backward_compatibility_positional_top_k(self):
+        """Verifies that calling engine.match(goal, 3) where top_k is passed positionally still works."""
+        goal = "Product management"
+        results = self.engine.match(goal, 3)
+        self.assertEqual(len(results), 3)
 
 
 if __name__ == "__main__":
