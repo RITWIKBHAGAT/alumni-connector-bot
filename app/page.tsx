@@ -1,114 +1,168 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import GoalInput from "@/components/GoalInput";
 import AlumniCard from "@/components/AlumniCard";
 import OutreachSection from "@/components/OutreachSection";
 import LoadingSkeleton from "@/components/LoadingSkeleton";
-import { MOCK_ALUMNI } from "@/data/mockAlumni";
 import { ALL_FIELDS_VALUE, OTHER_NOT_SURE_VALUE } from "@/data/careerFields";
 import { AlumniProfile } from "@/types/alumni";
+
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL ||
+  (typeof window !== "undefined"
+    ? `http://${window.location.hostname}:8000`
+    : "http://localhost:8000");
+
+const AVATAR_GRADIENTS = [
+  "from-blue-600 via-indigo-600 to-cyan-500",
+  "from-cyan-500 via-sky-600 to-blue-700",
+  "from-emerald-500 via-teal-600 to-cyan-600",
+  "from-indigo-600 via-purple-600 to-pink-500",
+  "from-violet-600 via-indigo-600 to-sky-500",
+  "from-amber-500 via-orange-600 to-red-500",
+];
+
+function formatApiAlumni(raw: any, index: number): AlumniProfile {
+  const name = raw.name || raw.alumnus_name || "Alumnus";
+  const initials =
+    raw.initials ||
+    name
+      .split(" ")
+      .map((part: string) => part[0])
+      .filter(Boolean)
+      .join("")
+      .slice(0, 2)
+      .toUpperCase();
+  const company = raw.company || raw.current_company || "Company";
+  const currentRole = raw.currentRole || raw.role || raw.current_role || "Professional";
+  const reasons: string[] = Array.isArray(raw.reasons) ? raw.reasons : [];
+  const reasonsSummary =
+    reasons.join(" ") || raw.relevanceExplanation || raw.career_summary || raw.careerSummary || "";
+
+  return {
+    id: raw.id || raw.alumnus_id || `alumni-${index + 1}`,
+    name,
+    initials,
+    university: raw.university || "University Alumni Network",
+    degree: raw.degree || "Bachelor's Degree",
+    graduationYear: raw.graduationYear || raw.graduation_year || 2020,
+    currentRole,
+    company,
+    location: raw.location || "United States",
+    industry: raw.industry || raw.function || "General",
+    fieldCategory: raw.fieldCategory || raw.function || "General",
+    avatarColor: raw.avatarColor || AVATAR_GRADIENTS[index % AVATAR_GRADIENTS.length],
+    matchPercentage:
+      raw.matchPercentage || (raw.match_score ? Math.round(raw.match_score * 100) : 75),
+    skills: Array.isArray(raw.skills) ? raw.skills : [],
+    relevanceExplanation:
+      raw.relevanceExplanation ||
+      reasonsSummary ||
+      `Experienced in ${raw.function || "the field"} at ${company}.`,
+    careerPath:
+      Array.isArray(raw.careerPath) && raw.careerPath.length > 0
+        ? raw.careerPath
+        : [
+            `Alumni Class of ${raw.graduationYear || raw.graduation_year || 2020}`,
+            `Joined ${company}`,
+            `${currentRole}`,
+          ],
+    isAvailableForMentorship:
+      raw.isAvailableForMentorship !== undefined ? raw.isAvailableForMentorship : true,
+    personalizationRationale:
+      raw.personalizationRationale ||
+      reasons[0] ||
+      `Aligned with your interest in ${raw.function || "this track"} and experience at ${company}.`,
+    conversationStarters:
+      Array.isArray(raw.conversationStarters) && raw.conversationStarters.length > 0
+        ? raw.conversationStarters
+        : [
+            {
+              id: `cs-${raw.id || index}-1`,
+              topic: "Career Trajectory",
+              starterText: `How did you navigate your career path into ${currentRole} at ${company}?`,
+            },
+            {
+              id: `cs-${raw.id || index}-2`,
+              topic: "Core Skills",
+              starterText: `What skills or project experiences were most valuable when preparing for ${raw.function || "this domain"}?`,
+            },
+            {
+              id: `cs-${raw.id || index}-3`,
+              topic: "Advice for Students",
+              starterText: `What advice would you give to a student preparing to enter ${company} today?`,
+            },
+          ],
+    outreachDrafts: raw.outreachDrafts || {
+      professional: {
+        subject: `Alumni Connection Inquiry — ${currentRole} at ${company}`,
+        body: `Dear ${name},\n\nI hope this note finds you well. I am a student preparing to pursue a career in ${raw.function || "your field"}, and I discovered your profile through the Alumni Connector platform.\n\nYour work as ${currentRole} at ${company} is very inspiring. If your schedule permits, I would be immensely grateful for 10–15 minutes of your time for a brief introductory conversation to learn about your path and any advice you have for standing out.\n\nThank you for your time and continued support of our alumni community.\n\nWarm regards,\n[Your Name]`,
+      },
+      conversational: {
+        subject: `Hello from a fellow student & aspiring ${currentRole}!`,
+        body: `Hi ${name},\n\nI came across your journey on the Alumni Connector and wanted to reach out! I am currently working on breaking into ${raw.function || "this space"} and loved seeing what you've accomplished at ${company}.\n\nIf your schedule permits a quick 10–15 minute virtual coffee chat over the coming weeks, I would love to hear about your experience.\n\nThanks so much for being an active part of our alumni network!\n\nBest,\n[Your Name]`,
+      },
+      "in-depth": {
+        subject: `Career Trajectory & Industry Preparation — Inquiry for ${name}`,
+        body: `Dear ${name},\n\nI am writing to you as an aspiring professional preparing for upcoming recruiting cycles in ${raw.function || "this field"}. Having reviewed your trajectory to ${currentRole} at ${company}, I was particularly drawn to your focus on ${raw.skills?.[0] || "industry practices"}.\n\nI would greatly value your perspective on breaking into the field and standing out during recruitment. If you have 15 minutes available for a brief conversation, I would be deeply grateful for your insights.\n\nSincerely,\n[Your Name]`,
+      },
+    },
+  };
+}
 
 export default function Home() {
   const [careerGoal, setCareerGoal] = useState("");
   const [selectedField, setSelectedField] = useState(ALL_FIELDS_VALUE);
   const [isLoading, setIsLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
+  const [filteredAlumni, setFilteredAlumni] = useState<AlumniProfile[]>([]);
   const [selectedAlumni, setSelectedAlumni] = useState<AlumniProfile | null>(null);
   const [mobileTab, setMobileTab] = useState<"matches" | "outreach">("matches");
 
-  // Simulated search matching
-  const handleSearch = () => {
+  const handleSearch = async () => {
     setIsLoading(true);
     setHasSearched(true);
 
-    setTimeout(() => {
-      const lowerGoal = careerGoal.toLowerCase();
-      let matchedList = [...MOCK_ALUMNI];
+    try {
+      const fieldParam =
+        selectedField === ALL_FIELDS_VALUE || selectedField === OTHER_NOT_SURE_VALUE
+          ? ""
+          : selectedField;
 
-      // Re-rank based on goal keywords or structured field
-      if (
-        selectedField.includes("Consulting") ||
-        lowerGoal.includes("consult") ||
-        lowerGoal.includes("case") ||
-        lowerGoal.includes("mbb") ||
-        lowerGoal.includes("strategy")
-      ) {
-        matchedList = matchedList.sort((a, b) => (a.id === "alumni-1" ? -1 : b.id === "alumni-1" ? 1 : 0));
-      } else if (
-        selectedField.includes("Product") ||
-        selectedField.includes("Software") ||
-        lowerGoal.includes("product") ||
-        lowerGoal.includes("apm") ||
-        lowerGoal.includes("cloud")
-      ) {
-        matchedList = matchedList.sort((a, b) => (a.id === "alumni-2" ? -1 : b.id === "alumni-2" ? 1 : 0));
-      } else if (
-        selectedField.includes("Banking") ||
-        selectedField.includes("Finance") ||
-        lowerGoal.includes("bank") ||
-        lowerGoal.includes("m&a") ||
-        lowerGoal.includes("finance") ||
-        lowerGoal.includes("lbo")
-      ) {
-        matchedList = matchedList.sort((a, b) => (a.id === "alumni-3" ? -1 : b.id === "alumni-3" ? 1 : 0));
-      } else if (
-        selectedField.includes("AI") ||
-        lowerGoal.includes("ai") ||
-        lowerGoal.includes("ml") ||
-        lowerGoal.includes("research") ||
-        lowerGoal.includes("machine learning")
-      ) {
-        matchedList = matchedList.sort((a, b) => (a.id === "alumni-4" ? -1 : b.id === "alumni-4" ? 1 : 0));
-      } else if (
-        selectedField.includes("Design") ||
-        lowerGoal.includes("design") ||
-        lowerGoal.includes("ux") ||
-        lowerGoal.includes("ui") ||
-        lowerGoal.includes("figma")
-      ) {
-        matchedList = matchedList.sort((a, b) => (a.id === "alumni-5" ? -1 : b.id === "alumni-5" ? 1 : 0));
-      } else if (
-        selectedField.includes("Biotechnology") ||
-        selectedField.includes("Healthcare") ||
-        lowerGoal.includes("bio") ||
-        lowerGoal.includes("medicine") ||
-        lowerGoal.includes("pharma") ||
-        lowerGoal.includes("genomic")
-      ) {
-        matchedList = matchedList.sort((a, b) => (a.id === "alumni-6" ? -1 : b.id === "alumni-6" ? 1 : 0));
+      const response = await fetch(`${API_BASE_URL}/api/match`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          career_goal: careerGoal,
+          selected_field: fieldParam,
+          top_k: 5,
+          strict_filter: false,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`API returned status ${response.status}`);
       }
 
-      // Check for zero results condition (e.g. query has no relevant tokens and field is not matching)
-      const hasMeaningfulQuery =
-        careerGoal.trim().length > 0 || selectedField !== ALL_FIELDS_VALUE;
+      const data = await response.json();
+      const rawList = Array.isArray(data.alumni)
+        ? data.alumni
+        : (Array.isArray(data.matches) ? data.matches : []);
+      const formatted = rawList.map((item: any, idx: number) => formatApiAlumni(item, idx));
 
-      if (!hasMeaningfulQuery) {
-        matchedList = [];
-        setSelectedAlumni(null);
-      } else {
-        setSelectedAlumni(matchedList[0] || null);
-      }
-
+      setFilteredAlumni(formatted);
+      setSelectedAlumni(formatted[0] || null);
+    } catch (error) {
+      console.error("Failed to fetch alumni matches from API:", error);
+      setFilteredAlumni([]);
+      setSelectedAlumni(null);
+    } finally {
       setIsLoading(false);
-    }, 650);
-  };
-
-  const filteredAlumni = useMemo(() => {
-    if (selectedField === ALL_FIELDS_VALUE || selectedField === OTHER_NOT_SURE_VALUE) {
-      return MOCK_ALUMNI;
     }
-
-    const matched = MOCK_ALUMNI.filter(
-      (item) =>
-        item.industry.toLowerCase().includes(selectedField.toLowerCase()) ||
-        item.fieldCategory.toLowerCase().includes(selectedField.toLowerCase()) ||
-        item.skills.some((s) => s.toLowerCase().includes(selectedField.toLowerCase())) ||
-        item.currentRole.toLowerCase().includes(selectedField.toLowerCase())
-    );
-
-    return matched.length > 0 ? matched : MOCK_ALUMNI;
-  }, [selectedField]);
+  };
 
   const handleSelectProfile = (profile: AlumniProfile) => {
     setSelectedAlumni(profile);
@@ -119,6 +173,7 @@ export default function Home() {
     setCareerGoal("");
     setSelectedField(ALL_FIELDS_VALUE);
     setHasSearched(false);
+    setFilteredAlumni([]);
     setSelectedAlumni(null);
   };
 
