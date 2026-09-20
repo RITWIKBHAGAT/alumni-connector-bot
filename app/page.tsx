@@ -10,10 +10,9 @@ import { AlumniProfile } from "@/types/alumni";
 
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_URL ||
-  (typeof window !== "undefined"
-    ? `http://${window.location.hostname}:8000`
+  (typeof window !== "undefined" && window.location.hostname !== "localhost"
+    ? "/api/backend"
     : "http://localhost:8000");
-
 const AVATAR_GRADIENTS = [
   "from-blue-600 via-indigo-600 to-cyan-500",
   "from-cyan-500 via-sky-600 to-blue-700",
